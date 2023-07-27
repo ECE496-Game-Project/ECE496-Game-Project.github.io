@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <button class="button" id="xButton">X</button>
-    <button class="button" id="yButton">Y</button>
-    <button class="button" id="zButton">Z</button>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
@@ -59,11 +56,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Polarizer.loader.js";
+      var loaderUrl = buildUrl + "/optics.github.io.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Polarizer.data.br",
-        frameworkUrl: buildUrl + "/Polarizer.framework.js.br",
-        codeUrl: buildUrl + "/Polarizer.wasm.br",
+        dataUrl: buildUrl + "/optics.github.io.data",
+        frameworkUrl: buildUrl + "/optics.github.io.framework.js",
+        codeUrl: buildUrl + "/optics.github.io.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Polarizer",
