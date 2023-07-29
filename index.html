@@ -3,15 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Polarizer</title>
+    <title>Unity WebGL Player | Optics</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="Build/CSS/style.css">
   </head>
   <body>
     <div id="ui-container">
-      <button class="button" id="btnX">X</button>
-      <button class="button" id="btnY">Y</button>
-      <button class="button" id="btnZ">Z</button>
+      <div class="left-rectangle"></div>
+      <div class="middle-container">
+        <div class="small-rectangle">
+          <button class="button" id="btnX">X</button>
+          <button class="button" id="btnY">Y</button>
+          <button class="button" id="btnZ">Z</button>
+        </div>
+      </div>
+      <div class="right-rectangle"></div>
     </div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
@@ -28,7 +34,11 @@
         <div id="unity-build-title">Polarizer</div>
       </div>
     </div>
-    <script src="Build/JavaScript/unity.template.js"></script>
-    <script src="Build/JavaScript/buttons.js"></script>
+    <script src="Build/JavaScript/UnityTemplate.js"></script>
+    <script src="Build/JavaScript/UnityLoader.js"></script>
+    <script>
+      
+    </script>
+    <script src="Build/JavaScript/Buttons.js"></script>
   </body>
 </html>

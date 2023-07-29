@@ -30,14 +30,14 @@ function unityShowBanner(msg, type) {
 }
 
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/JavaScript/optics.github.io.loader.js";
+var loaderUrl = buildUrl + "/JavaScript/UnityLoader.js";
 var config = {
-    frameworkUrl: buildUrl + "/JavaScript/optics.github.io.framework.js",
-    dataUrl: buildUrl + "/UnityData/optics.github.io.data",
-    codeUrl: buildUrl + "/UnityData/optics.github.io.wasm",
+    frameworkUrl: buildUrl + "/JavaScript/UnityFramework.js",
+    dataUrl: buildUrl + "/UnityData/unity.data",
+    codeUrl: buildUrl + "/UnityData/unity.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "DefaultCompany",
-    productName: "Polarizer",
+    productName: "Optics",
     productVersion: "0.1.0",
     showBanner: unityShowBanner,
 };
