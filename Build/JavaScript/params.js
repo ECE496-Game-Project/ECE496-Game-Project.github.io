@@ -14,24 +14,6 @@
 // Dispersion Distance
 // Effect Distance
 
-// Function to load the Unity WebGL build
-
-function loadUnity() {
-    var myGameInstance = null;
-    var loaderUrl = buildUrl + "/JavaScript/unity.loader.js";
-    var script = document.createElement("script");
-    script.src = loaderUrl;
-    script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
-            console.log('Create My Game Instance');
-            myGameInstance = unityInstance;
-        })
-    }
-
-    document.body.appendChild(script);
-
-}
-
 // Populate the Type dropdown
 const typeSelect = document.getElementById('type');
 for (const type in WAVETYPE) {
@@ -54,6 +36,22 @@ rangeInputs.forEach(input => {
     input.parentNode.appendChild(output);
 });
 
+// Function to load the Unity WebGL build
+function loadUnity() {
+    var myGameInstance = null;
+    var loaderUrl = buildUrl + "/JavaScript/unity.loader.js";
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
+            console.log('Create My Game Instance');
+            myGameInstance = unityInstance;
+        })
+    }
+
+    document.body.appendChild(script);
+
+}
 
 // Load Unity WebGL after the page loads
 window.onload = loadUnity;
