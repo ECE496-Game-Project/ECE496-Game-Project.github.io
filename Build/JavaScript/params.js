@@ -70,14 +70,21 @@ function genTypeOption(){
 
 // Attach event listeners to the range inputs to update the displayed value
 function genSlider(){
+     // Get all range input elements
      const rangeInputs = document.querySelectorAll('input[type="range"]');
+
+     // Create and insert <output> elements after each range input
      rangeInputs.forEach(input => {
           const output = document.createElement('output');
+          input.parentNode.insertBefore(output, input);
+
+          // Initialize the output value with the initial input value
           output.textContent = input.value;
-          input.addEventListener('input', function () {
+
+          // Add an event listener to update the output value when the input value changes
+          input.addEventListener('input', function() {
                output.textContent = this.value;
           });
-          input.parentNode.appendChild(output);
      });
 }
 
