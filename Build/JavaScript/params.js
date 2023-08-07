@@ -24,35 +24,38 @@ function waveParams(){
      let params = new WaveParams();
      gameInstance?.SendMessage("WaveLine", "AssignParams", params);
 
-     document.getElementById("type").value = waveParams.Type;
-     document.getElementById("eox").value = waveParams.Eox;
-     document.getElementById("eoy").value = waveParams.Eoy;
-     document.getElementById("w").value = waveParams.W;
-     document.getElementById("k").value = waveParams.K;
-     document.getElementById("n").value = waveParams.N;
-     document.getElementById("theta").value = waveParams.Theta;
-     document.getElementById("phi").value = waveParams.Phi;
+     document.getElementById("type").value = params.Type;
+     document.getElementById("eox").value = params.Eox;
+     document.getElementById("eoy").value = params.Eoy;
+     document.getElementById("w").value = params.W;
+     document.getElementById("k").value = params.K;
+     document.getElementById("n").value = params.N;
+     document.getElementById("theta").value = params.Theta;
+     document.getElementById("phi").value = params.Phi;
 
      // Add event listeners to input fields for user modification
      document.getElementById("eox").addEventListener("input", function() {
-          waveParams.Eox = parseFloat(this.value);
+          params.Eox = parseFloat(this.value);
      });
 
      document.getElementById("eoy").addEventListener("input", function() {
-          waveParams.Eoy = parseFloat(this.value);
+          params.Eoy = parseFloat(this.value);
      });
 
      document.getElementById("w").addEventListener("input", function() {
-          waveParams.W = parseFloat(this.value);
+          params.W = parseFloat(this.value);
      });
 
      document.getElementById("k").addEventListener("input", function() {
-          waveParams.K = parseFloat(this.value);
+          params.K = parseFloat(this.value);
      });
 
      document.getElementById("n").addEventListener("input", function() {
-          waveParams.N = parseFloat(this.value);
+          params.N = parseFloat(this.value);
      });
+
+     genTypeOption();
+     genSlider();
 }
 
 // Populate the Type dropdown
@@ -87,6 +90,3 @@ function genSlider(){
           });
      });
 }
-
-genTypeOption();
-genSlider();
