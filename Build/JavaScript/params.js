@@ -20,10 +20,10 @@ class WaveParams {
      }
 }
 
-function waveParams(){
-     let params = new WaveParams();
-     gameInstance?.SendMessage("WaveLine", "AssignParams", params);
+let params = new WaveParams();
 
+function waveParams(){
+     // Get Value from Unity
      document.getElementById("type").value = params.Type;
      document.getElementById("eox").value = params.Eox;
      document.getElementById("eoy").value = params.Eoy;
@@ -32,7 +32,9 @@ function waveParams(){
      document.getElementById("n").value = params.N;
      document.getElementById("theta").value = params.Theta;
      document.getElementById("phi").value = params.Phi;
+     //gameInstance?.SendMessage("WaveLine", "SendParamsToWeb");
 
+     // Set Value to Unity
      // Add event listeners to input fields for user modification
      document.getElementById("eox").addEventListener("input", function() {
           params.Eox = parseFloat(this.value);
@@ -56,6 +58,10 @@ function waveParams(){
 
      genTypeOption();
      genSlider();
+}
+
+function checkLoad(){
+     window.alert("Working!");
 }
 
 // Populate the Type dropdown
