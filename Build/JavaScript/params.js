@@ -5,6 +5,26 @@ const WAVETYPE = {
      POINT: 2
 };
 
+// const Theta = {
+//      _value: 0,
+//      listeners: [],
+//      get value(){
+//           return this._value;
+//      },
+//      set value(newValue){
+//           this._value = newValue;
+//           this.notifyListeners();
+//      },
+//      addListener(listener) {
+//           this.listeners.push(listener);
+//      },
+//      notifyListeners() {
+//           this.listeners.forEach(listener => {
+//                listener(this._value);
+//           });
+//      }
+// };
+
 // Define the WaveParams class
 class WaveParams {
      constructor() {
@@ -24,14 +44,6 @@ let params = new WaveParams();
 
 function waveParams(){
      // Get Value from Unity
-     document.getElementById("type").value = params.Type;
-     document.getElementById("eox").value = params.Eox;
-     document.getElementById("eoy").value = params.Eoy;
-     document.getElementById("w").value = params.W;
-     document.getElementById("k").value = params.K;
-     document.getElementById("n").value = params.N;
-     document.getElementById("theta").value = params.Theta;
-     document.getElementById("phi").value = params.Phi;
      //gameInstance?.SendMessage("WaveLine", "SendParamsToWeb");
 
      // Set Value to Unity
@@ -54,6 +66,16 @@ function waveParams(){
 
      document.getElementById("n").addEventListener("input", function() {
           params.N = parseFloat(this.value);
+     });
+
+     document.getElementById("theta").addEventListener("input", function() {
+          console.log("Theta input changes to " + params.Theta);
+          params.Theta = parseFloat(this.value);
+     });
+
+     document.getElementById("phi").addEventListener("input", function() {
+          console.log("Phi input changes to " + params.Phi);
+          params.Phi = parseFloat(this.value);
      });
 
      genTypeOption();
@@ -87,12 +109,16 @@ function genSlider(){
           const output = document.createElement('output');
           input.parentNode.insertBefore(output, input);
 
-          // Initialize the output value with the initial input value
-          output.textContent = input.value;
-
           // Add an event listener to update the output value when the input value changes
           input.addEventListener('input', function() {
+               console.log("Input value changes to " + this.value);
                output.textContent = this.value;
           });
+
+          // params.Theta.addListener(function (){
+          //      console.log("Params changes to " + this.value);
+          //      output.textContent = this.value;
+          //      input.value = this.value;
+          // });
      });
 }
