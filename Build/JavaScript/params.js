@@ -15,13 +15,43 @@ const ParamDict = {
      6: "phi",
 };
 
-let params = new WaveParams();
-
-function waveParams(){
+function waveParamsPanels(){
      // Get Value from Unity
-     //gameInstance?.SendMessage("WaveLine", "SendParamsToWeb");
      genTypeOption();
      genSlider();
+
+     // Set Value to Unity
+     document.getElementById("type").addEventListener("input", function() {
+          gameInstance.SendMessage("WaveLine", "SetTypeFromWeb", this.value);
+     });
+
+     document.getElementById("eox").addEventListener("input", function() {
+          gameInstance.SendMessage("WaveLine", "SetEoxFromWeb", this.value);
+     });
+
+     document.getElementById("eoy").addEventListener("input", function() {
+          gameInstance.SendMessage("WaveLine", "SetEoyFromWeb", this.value);
+     });
+
+     document.getElementById("w").addEventListener("input", function() {
+          gameInstance.SendMessage("WaveLine", "SetWFromWeb", this.value);
+     });
+
+     document.getElementById("k").addEventListener("input", function() {
+          gameInstance.SendMessage("WaveLine", "SetKFromWeb", this.value);
+     });
+
+     document.getElementById("n").addEventListener("input", function() {
+          gameInstance.SendMessage("WaveLine", "SetNFromWeb", this.value);
+     });
+
+     document.getElementById("theta").addEventListener("input", function() {
+          gameInstance.SendMessage("WaveLine", "SetThetaFromWeb", this.value);
+     });
+
+     document.getElementById("phi").addEventListener("input", function() {
+          gameInstance.SendMessage("WaveLine", "SetPhiFromWeb", this.value);
+     });
 }
 
 function checkLoad(){

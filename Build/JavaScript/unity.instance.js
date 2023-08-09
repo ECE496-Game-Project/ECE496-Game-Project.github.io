@@ -26,7 +26,7 @@ function loadUnity() {
     }
     document.body.appendChild(script);
 
-    waveParams();
+    waveParamsPanels();
     cameraButtons();
 }
 
