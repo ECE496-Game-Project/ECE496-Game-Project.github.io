@@ -64,11 +64,6 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
     // config.devicePixelRatio = 1;
 
     unityShowBanner('WebGL builds are not supported on mobile devices.');
-} else {
-    // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
-    canvas.style.width = "960px";
-    canvas.style.height = "600px";
 }
 
 loadingBar.style.display = "block";
