@@ -1,4 +1,26 @@
-// Define the WAVETYPE enum
+// To show data in the Web
+// Model
+// data in C#: WaveParams
+// C# data model
+
+// Presenter
+// data in C#:
+// The logic to present param data to web: A separate MonoBehaviour Script
+
+// View
+// data in HTML: getID("").id
+
+
+// To show animation in Unity
+// Model
+// The same model: WaveParams
+
+// Controller
+// The animation controller: WaveSource, RootWaveSource
+
+// View
+// Visualisation in Unity Scene: LineWaveDisplay
+
 const WAVETYPE = {
      INVALID: 0,
      PARALLEL: 1,
@@ -13,6 +35,7 @@ const ParamDict = {
      4: "n",
      5: "theta",
      6: "phi",
+     7: "distance",
 };
 
 function waveParamsPanels(){
@@ -45,6 +68,10 @@ function waveParamsPanels(){
           gameInstance.SendMessage("WaveLine", "SetNFromWeb", this.value);
      });
 
+     document.getElementById("n").addEventListener("input", function() {
+          gameInstance.SendMessage("WaveLine", "SetDistanceFromWeb", this.value);
+     });
+
      document.getElementById("theta").addEventListener("input", function() {
           gameInstance.SendMessage("WaveLine", "SetThetaFromWeb", this.value);
      });
@@ -52,10 +79,6 @@ function waveParamsPanels(){
      document.getElementById("phi").addEventListener("input", function() {
           gameInstance.SendMessage("WaveLine", "SetPhiFromWeb", this.value);
      });
-}
-
-function checkLoad(){
-     window.alert("Working!");
 }
 
 // Populate the Type dropdown
