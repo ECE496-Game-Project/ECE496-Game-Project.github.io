@@ -11,9 +11,6 @@ function loadUnity() {
         })
     }
     document.body.appendChild(script);
-
-    waveParamsPanels();
-    cameraButtons();
 }
 
 // Load Unity WebGL after the page loads

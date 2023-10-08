@@ -8,45 +8,7 @@
     <link rel="stylesheet" href="Build/CSS/style.css">
   </head>
   <body>
-    <div id="ui-container">
-      <div class="left-container"></div>
-      <div class="middle-container">
-        <div class="small-rectangle">
-          <button class="button" id="btnX">X</button>
-          <button class="button" id="btnY">Y</button>
-          <button class="button" id="btnZ">Z</button>
-        </div>
-      </div>
-      <div class="right-container">
-        <label for="type">Type:</label>
-        <select id="type"></select>
-
-        <label for="eox">Eox:</label>
-        <input type="number" id="eox">
-
-        <label for="eoy">Eoy:</label>
-        <input type="number" id="eoy">
-
-        <label for="w">W:</label>
-        <input type="number" id="w">
-
-        <label for="k">K:</label>
-        <input type="number" id="k">
-
-        <label for="n">N:</label>
-        <input type="number" id="n">
-
-        <label for="n">Effective Distance:</label>
-        <input type="number" id="distance">
-
-        <label for="theta">Theta:</label>
-        <input type="range" id="theta" min="0" max="360">
-
-        <label for="phi">Phi:</label>
-        <input type="range" id="phi" min="0" max="360">
-      </div>
-    </div>
-    <div id="unity-container" class="unity-desktop">
+    <div id="unity-container">
       <canvas id="unity-canvas"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -55,15 +17,8 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Optics</div>
-      </div>
     </div>
     <script src="Build/JavaScript/unity.template.js"></script>
     <script src="Build/JavaScript/unity.instance.js"></script>
-    <script src="Build/JavaScript/buttons.js"></script>
-    <script src="Build/JavaScript/params.js"></script>
   </body>
 </html>
