@@ -1,4 +1,4 @@
-# ece496-game-project.github.io
+# Wave Optics Platform
 
 To open this project, please go to the link: [](https://ece496-game-project.github.io/)https://ece496-game-project.github.io/.
 
