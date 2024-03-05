@@ -1,0 +1,23 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block title %}
+    OPTICS-SCENES
+{% endblock %}
+
+{% block extra_stylesheet %}
+
+{% endblock %}
+
+{% block content %}
+        <ul>
+            {% for scene in scenes %}
+                <li>
+                    Name: {{ scene.name }}<br>
+                    Description: {{ scene.description }}<br>
+                    Last Modify Time: {{ scene.last_modified }}<br>
+                </li>
+            {% endfor %}
+        </ul>
+{% endblock %}

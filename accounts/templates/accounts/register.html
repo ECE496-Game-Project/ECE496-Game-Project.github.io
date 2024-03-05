@@ -1,0 +1,20 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block title %}
+    OPTICS-REGISTER
+{% endblock %}
+
+{% block extra_stylesheet %}
+
+{% endblock %}
+
+{% block content %}
+    <h2>Register</h2>
+    <form method="post" action="{% url 'accounts:register' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}
