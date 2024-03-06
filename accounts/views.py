@@ -20,7 +20,6 @@ class RegisterView(FormView):
         first_name = form.cleaned_data['first_name']
         last_name = form.cleaned_data['last_name']
 
-        # Create the user
         user = User.objects.create_user(username, email, password1)
         user.first_name = first_name
         user.last_name = last_name
