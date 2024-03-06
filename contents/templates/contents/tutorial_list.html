@@ -1,0 +1,27 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block title %}
+    OPTICS-TUTORIALS
+{% endblock %}
+
+{% block extra_stylesheet %}
+
+{% endblock %}
+
+{% block content %}
+    {% for section in sections %}
+        <h2>{{ section.name }}</h2>
+        {% for tutorial in tutorials %}
+            {% if tutorial.section_id == section.id %}
+                <a href="{% url 'contents:unity' %}">
+                    <button>
+                        <h3>{{ tutorial.name }}</h3>
+                        <p>{{ tutorial.description }}</p>
+                    </button>
+                </a>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

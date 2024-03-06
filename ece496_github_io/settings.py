@@ -40,8 +40,7 @@ INSTALLED_APPS = [
 
     'home',
     'accounts',
-    'scenes',
-    'tutorials'
+    'contents'
 ]
 
 MIDDLEWARE = [
