@@ -289,8 +289,5 @@ footer{
 button{
     margin: var(--mb-0-5);
     padding: var(--mb-0-5);
-    background-color: var(--major-color);
-    border: none;
-    color: var(--text-color-light);
 }
 
