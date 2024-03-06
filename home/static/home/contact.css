@@ -1,49 +1,56 @@
 @import "general.css";
 
 .contact-container{
-    width: 80%;
 }
 
 .contact{
     display: flex;
     flex-direction: row;
     margin: var(--mb-2);
+    border-radius: var(--border-radius);
 }
 
 /* Contact Us Left */
 .contact-left-container{
-
+    color: var(--text-color-light);
+    background-color: var(--major-color);
 }
 
 .contact-left{
-
+    margin: var(--mb-1);
 }
 
 .contact-left-title{
-
+    color: var(--text-color-light);
 }
 
 .contact-left-subtitle{
 
 }
 
-.contact-icon{
-
+.contact-icon img{
+    width: 20px;
 }
 
 .contact-icon-title{
 
 }
 
+.contact-card{
+    margin: var(--mb-1);
+}
 
+.contact-card a{
+    color: var(--text-color-light);
+}
 
 /* Contact Us Right */
 .contact-right-container{
-
+    background-color: var(--text-color-light);
 }
 
 .contact-right{
-
+    margin: var(--mb-1);
 }
 
 .contact-right-title{

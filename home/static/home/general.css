@@ -75,7 +75,7 @@
     /* Border */
     --border-width: 1px;
     --border-width-bold: 3px;
-    --border-radius: var(--mb-0-25);
+    --border-radius: var(--mb-0-5);
 }
 
 /* GENERALS */
@@ -102,6 +102,12 @@ body{
     color: var(--text-color);
     position: relative;
     min-height: 100vh;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 h1{
@@ -148,10 +154,21 @@ img{
 select,
 input,
 textarea{
-    padding: 5px;
-    border: none;
+    margin: var(--mb-0-5);
+    padding: var(--mb-0-5);
     background: transparent;
     font-weight: var(--font-regular);
+    transition: 0.5s all ease;
+}
+
+select,
+input{
+    border: none;
+    border-bottom: solid var(--border-width) var(--major-color-lighter);
+}
+
+textarea {
+    border: var(--border-width) solid var(--major-color-lighter);
 }
 
 textarea::placeholder,
@@ -165,7 +182,17 @@ textarea:focus,
 input:focus {
     outline: none;
     font-size: var(--h4-font-size);
+    background-color: var(--container-color);
+    color: var(--text-color);
     transition: 0.5s all ease;
+}
+
+input:focus {
+    border-bottom: var(--border-width-bold) solid var(--major-color-heaveier);
+}
+
+textarea:focus{
+    border: var(--border-width-bold) solid var(--major-color-heaveier);
 }
 
 textarea:focus::placeholder,
@@ -256,5 +283,14 @@ footer{
 	position: absolute;
 	bottom: calc(var(--header-height) * -2 - var(--mb-2));
 	width: 100%;
+}
+
+/* Button */
+button{
+    margin: var(--mb-0-5);
+    padding: var(--mb-0-5);
+    background-color: var(--major-color);
+    border: none;
+    color: var(--text-color-light);
 }
 
