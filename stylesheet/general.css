@@ -184,6 +184,7 @@ input:focus {
     outline: none;
     background-color: var(--container-color-dark-second);
     color: var(--text-color-light);
+    border-radius: var(--border-radius);
     transition: 0.5s all ease;
 }
 
@@ -252,9 +253,28 @@ header img,
 	margin-left: var(--mb-1);
 }
 
+.header-list li{
+    height: 90%;
+    display: flex;
+    border-radius: var(--border-radius);
+    transition: all .5s ease;
+}
+
+.header-list li:hover{
+    background-color: var(--text-color-light);
+    transition: all .5s ease;
+}
+
 .header-list li a{
 	margin: 0 var(--mb-1);
 	color: var(--text-color-light);
+    align-self: center;
+    transition: all .5s ease;
+}
+
+.header-list li:hover a{
+    color: var(--text-color);
+    transition: all .5s ease;
 }
 
 .header-profile{
