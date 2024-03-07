@@ -1,8 +1,8 @@
-var container = document.querySelector("#unity-container");
-var canvas = document.querySelector("#unity-canvas");
-var loadingBar = document.querySelector("#unity-loading-bar");
-var progressBarFull = document.querySelector("#unity-progress-bar-full");
-var warningBanner = document.querySelector("#unity-warning");
+const container = document.querySelector("#unity-container");
+const canvas = document.querySelector("#unity-canvas");
+const loadingBar = document.querySelector("#unity-loading-bar");
+const progressBarFull = document.querySelector("#unity-progress-bar-full");
+const warningBanner = document.querySelector("#unity-warning");
 
 // Shows a temporary message banner/ribbon for a few seconds, or
 // a permanent error message on top of the canvas if type=='error'.
@@ -14,7 +14,8 @@ function unityShowBanner(msg, type) {
     function updateBannerVisibility() {
         warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
     }
-    var div = document.createElement('div');
+
+    const div = document.createElement('div');
     div.innerHTML = msg;
     warningBanner.appendChild(div);
     if (type === 'error') div.style = 'background: red; padding: 10px;';
@@ -28,16 +29,15 @@ function unityShowBanner(msg, type) {
     updateBannerVisibility();
 }
 
-var buildUrl = "Build";
-var loaderUrl = buildUrl + "/JavaScript/unity.loader.js";
-var config = {
-    frameworkUrl: buildUrl + "/JavaScript/unity.framework.js",
-    dataUrl: buildUrl + "/UnityData/unity.data",
-    codeUrl: buildUrl + "/UnityData/unity.wasm",
+const loaderUrl = "/script/unity.loader.js";
+const config = {
+    frameworkUrl: "/script/unity.framework.js",
+    dataUrl: "/resources/unity_data/unity.data",
+    codeUrl: "/resources/unity_data/unity.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "DefaultCompany",
     productName: "Optics",
-    productVersion: "0.1.0",
+    productVersion: "0.2.0",
     showBanner: unityShowBanner,
 };
 
@@ -51,7 +51,7 @@ var config = {
 if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
     // Mobile device style: fill the whole browser client area with the game canvas:
 
-    var meta = document.createElement('meta');
+    const meta = document.createElement('meta');
     meta.name = 'viewport';
     meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
     document.getElementsByTagName('head')[0].appendChild(meta);
@@ -69,7 +69,7 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 
 loadingBar.style.display = "block";
 
-var script = document.createElement("script");
+const script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
     createUnityInstance(canvas, config, (progress) => {

@@ -1,6 +1,6 @@
 // Function to load the Unity WebGL build
 function loadUnity() {
-    const loaderUrl = buildUrl + "/JavaScript/unity.loader.js";
+    const loaderUrl = "/script/unity.loader.js";
     const script = document.createElement("script");
     script.src = loaderUrl;
     script.onload = () => {
@@ -14,5 +14,5 @@ function loadUnity() {
 }
 
 // Load Unity WebGL after the page loads
-var gameInstance = null;
+let gameInstance = null;
 window.onload = loadUnity;
