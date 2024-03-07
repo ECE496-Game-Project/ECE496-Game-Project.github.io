@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OPTICS-MY-SCENES</title>
+
+    <link rel="icon" type="image/svg+xml" href="/resources/images/logo.svg">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/general.css">
+    <link rel="stylesheet" href="/stylesheet/unity.css">
+</head>
+<body>
+<header>
+    <a class="header-content" href="./index.html">
+        <img src="/resources/images/logo.svg" alt="Logo">
+    </a>
+    <ul class="header-content header-list">
+        <li>
+            <a role="button" href="./index.html">Home</a>
+        </li>
+        <li>
+            <a role="button" href="./contact.html">Contact Us</a>
+        </li>
+        <li>
+            <a role="button" href="./user_scenes.html">My Scenes</a>
+        </li>
+        <li>
+            <a role="button" href="./tutorials.html">Tutorials</a>
+        </li>
+    </ul>
+    <div style="flex: 1 0 0;"></div>
+</header>
+
+<main>
+    <div id="unity-container">
+        <canvas id="unity-canvas"></canvas>
+        <div id="unity-loading-bar">
+            <div id="optics-logo"></div>
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+            </div>
+        </div>
+        <div id="unity-warning"></div>
+    </div>
+    <script src="/script/unity.template.js"></script>
+    <script src="/script/unity.instance.js"></script>
+</main>
+
+<footer>
+    <p>Copyright by Chuyue Zhang, Leo Hanxu, and Yang Chen</p>
+</footer>
+</body>
+</html>
