@@ -1,0 +1,83 @@
+@import "general.css";
+
+.contact{
+    display: flex;
+    flex-direction: row;
+    margin: var(--mb-2);
+    border-radius: var(--border-radius);
+}
+
+/* Contact Us Left */
+.contact-left-container{
+    color: var(--text-color-light);
+    background-color: var(--major-color);
+}
+
+.contact-left{
+    margin: var(--mb-1);
+}
+
+.contact-left-title{
+    color: var(--text-color-light);
+}
+
+.contact-icon img{
+    width: 30px;
+}
+
+.contact-card{
+    margin: var(--mb-1);
+}
+
+.contact-card a{
+    color: var(--text-color-light);
+}
+
+/* Contact Us Right */
+.contact-right-container{
+    background-color: var(--text-color-light);
+}
+
+.contact-right{
+    margin: var(--mb-1);
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center ;
+}
+
+.contact-form p{
+    margin: var(--mb-0-25) 0;
+}
+
+.contact-form input{
+    width: 70%;
+}
+
+.contact-form textarea{
+    width: 90%;
+}
+
+.contact-form button{
+    background-color: var(--major-color);
+    border: none;
+    color: var(--text-color-light);
+    border-radius: var(--border-radius);
+    width: 80%;
+    align-self: center;
+    transition: all .5s ease;
+}
+
+.contact-form button:hover{
+    color: var(--major-color);
+    background-color: var(--border-color);
+    border: var(--border-width-bold) solid var(--major-color);
+    transition: all .5s ease;
+}
+
+
+
+
