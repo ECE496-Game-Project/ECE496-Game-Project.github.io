@@ -1,0 +1,8 @@
+@import "general.css";
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--mb-2-5);
+    width: 100%;
+}

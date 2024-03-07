@@ -7,6 +7,10 @@
     <link rel="icon" type="image/svg+xml" href="/resources/images/logo.svg">
     <link rel="stylesheet" type="text/css" href="/stylesheet/general.css">
     <link rel="stylesheet" href="/stylesheet/unity.css">
+    <link rel="stylesheet" href="/stylesheet/tutorials.css">
+
+    <script src="/script/unity.template.js" defer></script>
+    <script src="/script/unity.instance.js" defer></script>
 </head>
 <body>
 <header>
@@ -31,18 +35,34 @@
 </header>
 
 <main>
-    <div id="unity-container">
-        <canvas id="unity-canvas"></canvas>
-        <div id="unity-loading-bar">
-            <div id="optics-logo"></div>
-            <div id="unity-progress-bar-empty">
-                <div id="unity-progress-bar-full"></div>
+    <div class="grid-container">
+        <div id="tutorial-container">
+            <div class="section">
+                <h2>Section 1. Harmonic Plane Wave</h2>
+                <button onclick="dispatch('tut1')">Tutorial1: Basics</button>
+            </div>
+            <div class="section">
+                <h2>Section 2. Polarization</h2>
+            </div>
+            <div class="section">
+                <h2>Section 3. Polarize Devices</h2>
+                <button onclick="dispatch('tut2')">Tutorial2: Polarizer</button>
+                <button onclick="dispatch('tut3')">Tutorial3: Waveplate</button>
             </div>
         </div>
-        <div id="unity-warning"></div>
+
+        <div id="unity-container" style="display: none;">
+            <canvas id="unity-canvas"></canvas>
+            <div id="unity-loading-bar">
+                <div id="optics-logo"></div>
+                <div id="unity-progress-bar-empty">
+                    <div id="unity-progress-bar-full"></div>
+                </div>
+            </div>
+            <div id="unity-warning"></div>
+            <button onclick="close()">Close Tutorial</button>
+        </div>
     </div>
-    <script src="/script/unity.template.js"></script>
-    <script src="/script/unity.instance.js"></script>
 </main>
 
 <footer>

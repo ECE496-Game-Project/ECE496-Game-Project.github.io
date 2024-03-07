@@ -7,6 +7,9 @@
     <link rel="icon" type="image/svg+xml" href="/resources/images/logo.svg">
     <link rel="stylesheet" type="text/css" href="/stylesheet/general.css">
     <link rel="stylesheet" href="/stylesheet/unity.css">
+
+    <script src="/script/unity.template.js" defer></script>
+    <script src="/script/unity.instance.js" defer></script>
 </head>
 <body>
 <header>
@@ -31,7 +34,7 @@
 </header>
 
 <main>
-    <div id="unity-container">
+    <div id="unity-container" style="display: none;">
         <canvas id="unity-canvas"></canvas>
         <div id="unity-loading-bar">
             <div id="optics-logo"></div>
@@ -40,9 +43,8 @@
             </div>
         </div>
         <div id="unity-warning"></div>
+        <button onclick="close()">Close Tutorial</button>
     </div>
-    <script src="/script/unity.template.js"></script>
-    <script src="/script/unity.instance.js"></script>
 </main>
 
 <footer>

@@ -29,56 +29,67 @@ function unityShowBanner(msg, type) {
     updateBannerVisibility();
 }
 
-const loaderUrl = "/script/unity.loader.js";
-const config = {
-    frameworkUrl: "/script/unity.framework.js",
-    dataUrl: "/resources/unity_data/unity.data",
-    codeUrl: "/resources/unity_data/unity.wasm",
-    streamingAssetsUrl: "StreamingAssets",
-    companyName: "DefaultCompany",
-    productName: "Optics",
-    productVersion: "0.2.0",
-    showBanner: unityShowBanner,
-};
+let baseDir = "";
+let loaderUrl = "";
+let config = {};
 
-// By default Unity keeps WebGL canvas render target size matched with
-// the DOM size of the canvas element (scaled by window.devicePixelRatio)
-// Set this to false if you want to decouple this synchronization from
-// happening inside the engine, and you would instead like to size up
-// the canvas DOM size and WebGL render target sizes yourself.
-// config.matchWebGLToCanvasSize = false;
+function dispatch(param) {
+    baseDir = "/resources/unity_data/" + param + "/" + param;
+    loaderUrl = baseDir + ".loader.js";
+    config = {
+        frameworkUrl: baseDir + ".framework.js",
+        dataUrl: baseDir + ".data",
+        codeUrl: baseDir + ".wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Optics",
+        productVersion: "0.2.0",
+        showBanner: unityShowBanner,
+    };
 
-if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-    // Mobile device style: fill the whole browser client area with the game canvas:
-
-    const meta = document.createElement('meta');
-    meta.name = 'viewport';
-    meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-    document.getElementsByTagName('head')[0].appendChild(meta);
-    container.className = "unity-mobile";
-    canvas.className = "unity-mobile";
-
-    // To lower canvas resolution on mobile devices to gain some
-    // performance, uncomment the following line:
-    // config.devicePixelRatio = 1;
-
-    unityShowBanner('WebGL builds are not supported on mobile devices.');
-} else {
-    // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+    const unityContainer = document.getElementById('unity-container');
+    unityContainer.style.display = 'block';
+    render();
 }
 
-loadingBar.style.display = "block";
+function render(){
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
 
-const script = document.createElement("script");
-script.src = loaderUrl;
-script.onload = () => {
-    createUnityInstance(canvas, config, (progress) => {
-        progressBarFull.style.width = 100 * progress + "%";
-    }).then((unityInstance) => {
-        loadingBar.style.display = "none";
-    }).catch((message) => {
-        alert(message);
-    });
-};
+        const meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        container.className = "unity-mobile";
+        canvas.className = "unity-mobile";
 
-document.body.appendChild(script);
+        // To lower canvas resolution on mobile devices to gain some
+        // performance, uncomment the following line:
+        // config.devicePixelRatio = 1;
+
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
+    } else {
+        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+    }
+
+    loadingBar.style.display = "block";
+
+    const script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+            progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+            loadingBar.style.display = "none";
+        }).catch((message) => {
+            alert(message);
+        });
+    };
+
+    document.body.appendChild(script);
+}
+
+function close(){
+    const unityContainer = document.getElementById('unity-container');
+    unityContainer.style.display = 'none';
+}
