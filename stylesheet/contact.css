@@ -10,7 +10,7 @@
 /* Contact Us Left */
 .contact-left-container{
     color: var(--text-color-light);
-    background-color: var(--major-color);
+    background-color: var(--container-color-dark);
 }
 
 .contact-left{
@@ -62,7 +62,7 @@
 }
 
 #contact-form button{
-    background-color: var(--major-color);
+    background-color: var(--container-color-dark);
     border: none;
     color: var(--text-color-light);
     border-radius: var(--border-radius);
@@ -72,9 +72,9 @@
 }
 
 #contact-form button:hover{
-    color: var(--major-color);
+    color: var(--container-color-dark);
     background-color: var(--border-color);
-    border: var(--border-width-bold) solid var(--major-color);
+    border: var(--border-width-bold) solid var(--container-color-dark);
     transition: all .5s ease;
 }
 

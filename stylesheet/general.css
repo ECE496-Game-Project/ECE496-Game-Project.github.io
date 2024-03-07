@@ -23,6 +23,7 @@
     --container-color-second: hsl(var(--rest-hue), 0%, 50%);
 
     --container-color-dark: hsl(var(--rest-hue), 0%, 15.29%);
+    --container-color-dark-second: hsl(var(--rest-hue), 0%, 35.29%);
 
     --text-color: hsl(var(--rest-hue), 5%, 0%);
     --title-color: hsl(var(--rest-hue), 5%, 5%);
@@ -164,11 +165,11 @@ textarea{
 select,
 input{
     border: none;
-    border-bottom: solid var(--border-width) var(--major-color-lighter);
+    border-bottom: solid var(--border-width) var(--container-color-dark);
 }
 
 textarea {
-    border: var(--border-width) solid var(--major-color-lighter);
+    border: var(--border-width) solid var(--container-color-dark);
 }
 
 textarea::placeholder,
@@ -181,17 +182,17 @@ input::placeholder {
 textarea:focus,
 input:focus {
     outline: none;
-    background-color: var(--major-color-lighter);
-    color: var(--text-color);
+    background-color: var(--container-color-dark-second);
+    color: var(--text-color-light);
     transition: 0.5s all ease;
 }
 
 input:focus {
-    border-bottom: var(--border-width-bold) solid var(--major-color-heaveier);
+    border-bottom: var(--border-width-bold) solid var(--minor-color-second);
 }
 
 textarea:focus{
-    border: var(--border-width-bold) solid var(--major-color-heaveier);
+    border: var(--border-width-bold) solid var(--minor-color-second);
 }
 
 textarea:focus::placeholder,
