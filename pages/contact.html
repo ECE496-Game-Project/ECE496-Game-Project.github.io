@@ -7,6 +7,8 @@
     <link rel="icon" type="image/svg+xml" href="/resources/images/logo.svg">
     <link rel="stylesheet" type="text/css" href="/stylesheet/general.css">
     <link rel="stylesheet" type="text/css" href="/stylesheet/contact.css">
+
+    <script src="/script/contact.js" defer></script>
 </head>
 <body>
 <header>
@@ -40,11 +42,11 @@
                     <div class="">
                         <div class="contact-card">
                             <span class="contact-icon"><img alt="mail" src="/resources/images/icon_mail.png"></span>
-                            <h5 class="contact-icon-title">Chart to us</h5>
-                            <p class="">Our friendly team is here to help.<br></p>
-                            <a class="" href="mailto:zhangchuyue.zhang@mail.utoronto.ca">zhangchuyue.zhang@mail.utoronto.ca </a><br>
-                            <a class="" href="mailto:jackchen.chen@mail.utoronto.ca">jackchen.chen@mail.utoronto.ca </a><br>
-                            <a class="" href="mailto:leo.hanxu@mail.utoronto.ca">leo.hanxu@mail.utoronto.ca </a><br>
+                            <h5 class="contact-icon-title">Chat to us</h5>
+                            <p>Our friendly team is here to help.</p>
+                            <a href="mailto:zhangchuyue.zhang@mail.utoronto.ca">zhangchuyue.zhang@mail.utoronto.ca </a><br>
+                            <a href="mailto:jackchen.chen@mail.utoronto.ca">jackchen.chen@mail.utoronto.ca </a><br>
+                            <a href="mailto:leo.hanxu@mail.utoronto.ca">leo.hanxu@mail.utoronto.ca </a><br>
                         </div>
                         <div class="contact-card">
                             <span class="contact-icon"><img alt="location" src="/resources/images/icon_position.png"></span>
@@ -63,27 +65,24 @@
                     <p class="contact-right-subtitle">
                         You can reach us anytime via the form
                     </p>
-                    <form class="contact-form" method="post">
+                    <form id="contact-form" method="post">
                         <p>
                             <label for="id_email">Your Email:</label>
-                            <input type="email" name="email" maxlength="320" required="" id="id_email">
+                            <input type="email" name="email" maxlength="320" placeholder="Feedback sender" id="id_email">
                         </p>
                         <p>
                             <label for="id_sender">Your Name:</label>
-                            <input type="text" name="sender" maxlength="120" required="" id="id_sender">
+                            <input type="text" name="sender" maxlength="120" placeholder="Feedback sender" id="id_sender">
                         </p>
                         <p>
                             <label for="id_subject">Topic:</label>
-                            <input type="text" name="subject" maxlength="120" required="" id="id_subject">
+                            <input type="text" name="subject" maxlength="120" placeholder="Feedback subject" id="id_subject">
                         </p>
                         <p>
                             <label for="id_messages">Your Message:</label>
-                            <textarea name="messages" cols="40" rows="6" required="" id="id_messages"></textarea>
+                            <textarea name="messages" cols="40" rows="6" placeholder="What do you want to feedback?" id="id_messages"></textarea>
                         </p>
-                        <button type="submit">Send</button>
-                        <div class="">
-                            Thank you! Your message has been sent.
-                        </div>
+                        <button type="submit" onclick="composeEmail()">Send</button>
                     </form>
                 </div>
             </div>
