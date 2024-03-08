@@ -2,7 +2,75 @@
 
 .grid-container{
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: var(--mb-2-5);
-    width: 100%;
+    grid-template-columns: 100% 0;
+    gap: var(--mb-2);
+    width: 90%;
+    transition: all .5s ease;
+}
+
+/* Static */
+.section{
+    padding: var(--mb-1);
+    margin: var(--mb-1);
+    background-color: var(--container-color);
+    transition: all .5s ease;
+}
+
+.section h2{
+    color: var(--text-color);
+    padding-bottom: var(--mb-0-75);
+    margin-bottom: var(--mb-0-5);
+    border-bottom: var(--border-width-bold) solid var(--container-color-dark);
+    transition: all .5s ease;
+}
+
+.section button{
+    background-color: var(--container-color-dark);
+    color: var(--text-color-light);
+    padding: var(--mb-1);
+    border: none;
+    transition: all .2s ease;
+}
+
+.section:hover{
+    border-radius: var(--border-radius);
+    box-shadow: 3px 3px 6px var(--text-color);
+    transition: all .5s ease;
+}
+
+.section button:hover{
+    background-color: var(--body-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid var(--container-color-dark);
+    transition: all .2s ease;
+}
+
+/* Dynamic */
+.grid-unity-open .section{
+    padding: var(--mb-1) var(--mb-0-5);
+    margin: var(--mb-0-5) 0;
+    transition: all .5s ease;
+}
+
+.grid-unity-close .unity-list{
+    display: flex;
+    flex-direction: row;
+    transition: all .5s ease;
+}
+
+.grid-unity-open .unity-list{
+    display: flex;
+    flex-direction: column;
+    transition: all .5s ease;
+}
+
+.grid-unity-open .section h2{
+    font-size: var(--body-font);
+    transition: all .5s ease;
+}
+
+.grid-unity-open .section button{
+    padding: var(--mb-0-5) 0;
+    transition: all .2s ease;
 }

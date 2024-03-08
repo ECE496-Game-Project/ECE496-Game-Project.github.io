@@ -4,31 +4,6 @@ const loadingBar = document.querySelector("#unity-loading-bar");
 const progressBarFull = document.querySelector("#unity-progress-bar-full");
 const warningBanner = document.querySelector("#unity-warning");
 
-// Shows a temporary message banner/ribbon for a few seconds, or
-// a permanent error message on top of the canvas if type=='error'.
-// If type=='warning', a yellow highlight color is used.
-// Modify or remove this function to customize the visually presented
-// way that non-critical warnings and error messages are presented to the
-// user.
-function unityShowBanner(msg, type) {
-    function updateBannerVisibility() {
-        warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-    }
-
-    const div = document.createElement('div');
-    div.innerHTML = msg;
-    warningBanner.appendChild(div);
-    if (type === 'error') div.style = 'background: red; padding: 10px;';
-    else {
-        if (type === 'warning') div.style = 'background: yellow; padding: 10px;';
-        setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-        }, 5000);
-    }
-    updateBannerVisibility();
-}
-
 let baseDir = "";
 let loaderUrl = "";
 let config = {};
@@ -47,9 +22,39 @@ function dispatch(param) {
         showBanner: unityShowBanner,
     };
 
-    const unityContainer = document.getElementById('unity-container');
-    unityContainer.style.display = 'block';
-    render();
+    const gridContainer = document.getElementsByClassName('grid-container');
+    let gridClass = gridContainer[0].className;
+
+    if(gridClass === 'grid-container grid-unity-close'){
+        gridContainer[0].className = 'grid-container grid-unity-open';
+        gridContainer[0].style.gridTemplateColumns = 'max-content 1fr';
+        loadUnity();
+        render();
+    }
+
+    else{
+        gridContainer[0].className = 'grid-container grid-unity-close';
+        gridContainer[0].style.gridTemplateColumns = '100% 0';
+    }
+}
+
+function unityShowBanner(msg, type) {
+    function updateBannerVisibility() {
+        warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+    }
+
+    const div = document.createElement('div');
+    div.innerHTML = msg;
+    warningBanner.appendChild(div);
+    if (type === 'error') div.style = 'background: red; padding: 10px;';
+    else {
+        if (type === 'warning') div.style = 'background: yellow; padding: 10px;';
+        setTimeout(function() {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+        }, 5000);
+    }
+    updateBannerVisibility();
 }
 
 function render(){
@@ -89,7 +94,16 @@ function render(){
     document.body.appendChild(script);
 }
 
-function close(){
-    const unityContainer = document.getElementById('unity-container');
-    unityContainer.style.display = 'none';
+function loadUnity() {
+    let loaderUrl = baseDir + ".loader.js";
+    const script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
+            gameInstance = unityInstance;
+            if(gameInstance) console.log("Game instance is created");
+            else console.warn("Game Instance is null");
+        })
+    }
+    document.body.appendChild(script);
 }
