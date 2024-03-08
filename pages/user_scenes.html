@@ -7,8 +7,10 @@
     <link rel="icon" type="image/svg+xml" href="/resources/images/logo.svg">
     <link rel="stylesheet" type="text/css" href="/stylesheet/general.css">
     <link rel="stylesheet" href="/stylesheet/unity.css">
+    <link rel="stylesheet" href="/stylesheet/user_scenes.css">
 
-    <script src="/script/unity.template.js" defer></script>
+    <script src="/script/user_scene.js" defer></script>
+    <!--    <script src="/script/unity.js" defer></script>-->
 </head>
 <body>
 <header>
@@ -33,7 +35,11 @@
 </header>
 
 <main>
-    <div id="unity-container" style="display: none;">
+    <div>
+
+    </div>
+
+    <div id="unity-container">
         <canvas id="unity-canvas"></canvas>
         <div id="unity-loading-bar">
             <div id="optics-logo"></div>
@@ -42,7 +48,6 @@
             </div>
         </div>
         <div id="unity-warning"></div>
-        <button onclick="close()">Close Tutorial</button>
     </div>
 </main>
 

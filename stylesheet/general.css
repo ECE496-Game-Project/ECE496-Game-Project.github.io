@@ -105,12 +105,6 @@ body{
     min-height: 100vh;
 }
 
-main{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
 h1{
     font-size: var(--h1-font-size);
 }
@@ -241,6 +235,16 @@ header{
 	margin-bottom: var(--mb-1);
 }
 
+.header-content img{
+    transition: all .5s ease;
+}
+
+.header-content img:hover{
+    border-radius: var(--border-radius);
+    transform: scale(1.05);
+    transition: all .5s ease;
+}
+
 header img,
 .header-content{
 	height: calc(var(--header-height) - var(--mb-0-5));
@@ -291,6 +295,14 @@ header img,
 	border-radius: 50%;
 	object-fit: cover;
 	margin-left: var(--mb-0-75);
+}
+
+/* Main */
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 /* Footer */

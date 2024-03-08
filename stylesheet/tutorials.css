@@ -42,7 +42,7 @@
     background-color: var(--body-color);
     color: var(--text-color);
     border-radius: var(--border-radius);
-    border: var(--border-width) solid var(--container-color-dark);
+    border: var(--border-width-bold) solid var(--container-color-dark);
     transition: all .2s ease;
 }
 
