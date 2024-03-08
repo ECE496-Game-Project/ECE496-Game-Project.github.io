@@ -8,6 +8,16 @@ let baseDir = "";
 let loaderUrl = "";
 let config = {};
 
+const unityButtons = document.querySelectorAll('.unity-btn');
+
+let i = 1;
+unityButtons.forEach(function (el, i){
+    el.addEventListener('click', function (){
+        dispatch('tut' + i);
+    });
+    i++;
+})
+
 function dispatch(param) {
     baseDir = "/resources/unity_data/" + param + "/" + param;
     loaderUrl = baseDir + ".loader.js";
@@ -77,10 +87,18 @@ function render(){
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
     }
 
-    loadingBar.style.display = "block";
+    // loadingBar.style.display = "block";
 
-    const script = document.createElement("script");
-    script.src = loaderUrl;
+    const scriptEls = document.querySelectorAll(`script[src="${loaderUrl}"]`);
+    console.log("exists at least one " + scriptEls.length)
+    let script;
+    if(scriptEls.length > 0){
+        script = scriptEls[0];
+    }else{
+        script = document.createElement("script");
+        script.src = loaderUrl;
+    }
+
     script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
             progressBarFull.style.width = 100 * progress + "%";
@@ -96,12 +114,20 @@ function render(){
 
 function loadUnity() {
     let loaderUrl = baseDir + ".loader.js";
-    const script = document.createElement("script");
-    script.src = loaderUrl;
+
+    const scriptEls = document.querySelectorAll(`script[src="${loaderUrl}"]`);
+
+    let script;
+    if(scriptEls.length > 0){
+        script = scriptEls[0];
+    }else{
+        script = document.createElement("script");
+        script.src = loaderUrl;
+    }
+
     script.onload = () => {
         createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
-            gameInstance = unityInstance;
-            if(gameInstance) console.log("Game instance is created");
+            if(unityInstance) console.log("Game instance is created");
             else console.warn("Game Instance is null");
         })
     }
