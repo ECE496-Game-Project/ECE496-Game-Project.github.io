@@ -154,6 +154,7 @@ textarea{
     background: transparent;
     font-weight: var(--font-regular);
     transition: 0.5s all ease;
+    font-family: inherit;
 }
 
 select,
@@ -193,6 +194,13 @@ textarea:focus{
 textarea:focus::placeholder,
 input:focus::placeholder {
     opacity: 0;
+}
+
+/* Button */
+button{
+    margin: var(--mb-0-5);
+    padding: var(--mb-0-5);
+    font-family: inherit;
 }
 
 /* SCROLL BAR */
@@ -315,11 +323,5 @@ footer{
 	position: absolute;
 	bottom: calc(var(--header-height) * -2 - var(--mb-2));
 	width: 100%;
-}
-
-/* Button */
-button{
-    margin: var(--mb-0-5);
-    padding: var(--mb-0-5);
 }
 
