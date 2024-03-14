@@ -1,3 +1,5 @@
+// TODO Leave the script unique to tutorial in this file
+
 const container = document.querySelector("#unity-container");
 const canvas = document.querySelector("#unity-canvas");
 const loadingBar = document.querySelector("#unity-loading-bar");
@@ -83,14 +85,11 @@ function render(){
         // config.devicePixelRatio = 1;
 
         unityShowBanner('WebGL builds are not supported on mobile devices.');
-    } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
     }
 
-    // loadingBar.style.display = "block";
-
     const scriptEls = document.querySelectorAll(`script[src="${loaderUrl}"]`);
-    console.log("exists at least one " + scriptEls.length)
+    console.log("exists at least " + scriptEls.length)
+    // TODO: BUG Each scene could only be loaded once
     let script;
     if(scriptEls.length > 0){
         script = scriptEls[0];

@@ -1,5 +1,7 @@
 @import "general.css";
 
+/* TODO: Move the common Styles to unity.css */
+
 .grid-container{
     display: grid;
     grid-template-columns: 100% 0;

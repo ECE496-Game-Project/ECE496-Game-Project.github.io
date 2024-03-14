@@ -1,3 +1,5 @@
+// TODO Leave the common parts of script about Unity in this file
+
 const container = document.querySelector("#unity-container");
 const canvas = document.querySelector("#unity-canvas");
 const loadingBar = document.querySelector("#unity-loading-bar");
