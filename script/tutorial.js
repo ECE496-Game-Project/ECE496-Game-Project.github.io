@@ -11,16 +11,17 @@ let loaderUrl = "";
 let config = {};
 
 const unityButtons = document.querySelectorAll('.unity-btn');
+const gridContainer = document.getElementsByClassName('grid-container');
 
 let i = 1;
 unityButtons.forEach(function (el, i){
     el.addEventListener('click', function (){
-        dispatch('tut' + i);
+        dispatch('tut' + i, this);
     });
     i++;
 })
 
-function dispatch(param) {
+function dispatch(param, btn) {
     baseDir = "/resources/unity_data/" + param + "/" + param;
     loaderUrl = baseDir + ".loader.js";
     config = {
@@ -34,19 +35,19 @@ function dispatch(param) {
         showBanner: unityShowBanner,
     };
 
-    const gridContainer = document.getElementsByClassName('grid-container');
-    let gridClass = gridContainer[0].className;
-
-    if(gridClass === 'grid-container grid-unity-close'){
+    if(btn.className === 'unity-btn unity-btn-close'){
+        unityButtons.forEach(function (el){
+            el.className = 'unity-btn unity-btn-close';
+        });
+        btn.className = 'unity-btn unity-btn-open';
         gridContainer[0].className = 'grid-container grid-unity-open';
-        gridContainer[0].style.gridTemplateColumns = 'max-content 1fr';
         loadUnity();
         render();
     }
 
     else{
         gridContainer[0].className = 'grid-container grid-unity-close';
-        gridContainer[0].style.gridTemplateColumns = '100% 0';
+        btn.className = 'unity-btn unity-btn-close';
     }
 }
 

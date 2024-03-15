@@ -3,11 +3,19 @@
 /* TODO: Move the common Styles to unity.css */
 
 .grid-container{
-    display: grid;
-    grid-template-columns: 100% 0;
     gap: var(--mb-2);
     width: 90%;
     transition: all .5s ease;
+}
+
+.grid-unity-open{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
+
+.grid-unity-close{
+    display: grid;
+    grid-template-columns: 100% 0;
 }
 
 /* Static */
