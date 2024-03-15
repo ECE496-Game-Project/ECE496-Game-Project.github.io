@@ -38,11 +38,18 @@
 }
 
 .unity-btn:hover{
-    background-color: var(--body-color);
     color: var(--text-color);
     border-radius: var(--border-radius);
     border: var(--border-width-bold) solid var(--container-color-dark);
     transition: all .2s ease;
+}
+
+.unity-btn-close:hover{
+    background-color: var(--body-color);
+}
+
+.unity-btn-open:hover{
+    background-color: var(--minor-color);
 }
 
 /* Unity Canvas Close */
