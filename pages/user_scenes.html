@@ -9,57 +9,59 @@
     <link rel="stylesheet" href="/stylesheet/unity.css">
     <link rel="stylesheet" href="/stylesheet/user_scenes.css">
 
+    <script src="/script/unity.js" defer></script>
     <script src="/script/user_scene.js" defer></script>
-    <!--    <script src="/script/unity.js" defer></script>-->
 </head>
 <body>
-<header>
-    <a class="header-content" href="../index.html">
-        <img src="/resources/images/logo.svg" alt="Logo">
-    </a>
-    <ul class="header-content header-list">
-        <li>
-            <a role="button" href="../index.html">Home</a>
-        </li>
-        <li>
-            <a role="button" href="./contact.html">Contact Us</a>
-        </li>
-        <li>
-            <a role="button" href="./user_scenes.html">My Scenes</a>
-        </li>
-        <li>
-            <a role="button" href="./tutorials.html">Tutorials</a>
-        </li>
-    </ul>
-    <div style="flex: 1 0 0;"></div>
-</header>
+    <header>
+        <a class="header-content" href="../index.html">
+            <img src="/resources/images/logo.svg" alt="Logo">
+        </a>
+        <ul class="header-content header-list">
+            <li>
+                <a role="button" href="../index.html">Home</a>
+            </li>
+            <li>
+                <a role="button" href="./contact.html">Contact Us</a>
+            </li>
+            <li>
+                <a role="button" href="./user_scenes.html">My Scenes</a>
+            </li>
+            <li>
+                <a role="button" href="./tutorials.html">Tutorials</a>
+            </li>
+        </ul>
+        <div style="flex: 1 0 0;"></div>
+    </header>
 
-<main>
-    <div>
-        <!-- grid of buttons -->
-            <!-- click one of the buttons, unity scene open, and load corresponding scene -->
-            <!-- click another button, load this scene -->
-            <!-- click the same button again, the unity scene closes -->
-            <!-- store the scene when click to exit the unity -->
-        <!-- add button -->
-            <!-- open a pop-up window, enter name, description of the scene; -->
-            <!-- create a new scene, and store it in IndexDB -->
-    </div>
+    <main>
+        <div class="grid-container grid-unity-close">
+            <div id="user-scene-container">
+                <!-- grid of buttons -->
+                <!-- click one of the buttons, unity scene open, and load corresponding scene -->
+                <!-- click another button, load this scene -->
+                <!-- click the same button again, the unity scene closes -->
+                <!-- store the scene when click to exit the unity -->
+                <!-- add button -->
+                <!-- open a pop-up window, enter name, description of the scene; -->
+                <!-- create a new scene, and store it in IndexDB -->
+            </div>
 
-    <div id="unity-container">
-        <canvas id="unity-canvas"></canvas>
-        <div id="unity-loading-bar">
-            <div id="optics-logo"></div>
-            <div id="unity-progress-bar-empty">
-                <div id="unity-progress-bar-full"></div>
+            <div id="unity-container">
+                <canvas id="unity-canvas"></canvas>
+                <div id="unity-loading-bar">
+                    <div id="optics-logo"></div>
+                    <div id="unity-progress-bar-empty">
+                        <div id="unity-progress-bar-full"></div>
+                    </div>
+                </div>
+                <div id="unity-warning"></div>
             </div>
         </div>
-        <div id="unity-warning"></div>
-    </div>
-</main>
+    </main>
 
-<footer>
-    <p>Copyright by Chuyue Zhang, Leo Hanxu, and Yang Chen</p>
-</footer>
+    <footer>
+        <p>Copyright by Chuyue Zhang, Leo Hanxu, and Yang Chen</p>
+    </footer>
 </body>
 </html>

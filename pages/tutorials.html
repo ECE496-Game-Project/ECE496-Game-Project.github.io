@@ -9,69 +9,80 @@
     <link rel="stylesheet" href="/stylesheet/unity.css">
     <link rel="stylesheet" href="/stylesheet/tutorials.css">
 
+    <script src="/script/unity.js" defer></script>
     <script src="/script/tutorial.js" defer></script>
-<!--    <script src="/script/unity.js" defer></script>-->
 </head>
 <body>
-<header>
-    <a class="header-content" href="../index.html">
-        <img src="/resources/images/logo.svg" alt="Logo">
-    </a>
-    <ul class="header-content header-list">
-        <li>
-            <a role="button" href="../index.html">Home</a>
-        </li>
-        <li>
-            <a role="button" href="./contact.html">Contact Us</a>
-        </li>
-        <li>
-            <a role="button" href="./user_scenes.html">My Scenes</a>
-        </li>
-        <li>
-            <a role="button" href="./tutorials.html">Tutorials</a>
-        </li>
-    </ul>
-    <div style="flex: 1 0 0;"></div>
-</header>
+    <header>
+        <a class="header-content" href="../index.html">
+            <img src="/resources/images/logo.svg" alt="Logo">
+        </a>
+        <ul class="header-content header-list">
+            <li>
+                <a role="button" href="../index.html">Home</a>
+            </li>
+            <li>
+                <a role="button" href="./contact.html">Contact Us</a>
+            </li>
+            <li>
+                <a role="button" href="./user_scenes.html">My Scenes</a>
+            </li>
+            <li>
+                <a role="button" href="./tutorials.html">Tutorials</a>
+            </li>
+        </ul>
+        <div style="flex: 1 0 0;"></div>
+    </header>
 
-<main>
-    <div class="grid-container grid-unity-close">
-        <div id="tutorial-container">
-            <div class="section">
-                <h2>Section 1. Harmonic Plane Wave</h2>
-                <div class="unity-list">
-                    <button class="unity-btn unity-btn-close">Tutorial1: Basics</button>
+    <main>
+        <div class="grid-container grid-unity-close">
+            <div id="tutorial-container">
+                <div class="section">
+                    <h2>Sec 1. Harmonic Plane Wave</h2>
+                    <div class="unity-list">
+                        <button class="unity-btn unity-btn-close">Tut 1: Basics</button>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Sec 2. Polarization</h2>
+                    <div class="unity-list">
+                        <button class="unity-btn unity-btn-close">Tut 2: Polarization</button>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Sec 3. Polarize Devices</h2>
+                    <div class="unity-list">
+                        <button class="unity-btn unity-btn-close">Tut 3: Polarizer</button>
+                        <button class="unity-btn unity-btn-close">Tut 4: Waveplate</button>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Sec 4. Reflection and Refraction</h2>
+                    <div class="unity-list">
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Sec 5. Interference</h2>
+                    <div class="unity-list">
+                    </div>
                 </div>
             </div>
-            <div class="section">
-                <h2>Section 2. Polarization</h2>
-                <div class="unity-list">
+
+            <div id="unity-container">
+                <canvas id="unity-canvas"></canvas>
+                <div id="unity-loading-bar">
+                    <div id="optics-logo"></div>
+                    <div id="unity-progress-bar-empty">
+                        <div id="unity-progress-bar-full"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="section">
-                <h2>Section 3. Polarize Devices</h2>
-                <div class="unity-list">
-                    <button class="unity-btn unity-btn-close">Tutorial2: Polarizer</button>
-                    <button class="unity-btn unity-btn-close">Tutorial3: Waveplate</button>
-                </div>
+                <div id="unity-warning"></div>
             </div>
         </div>
+    </main>
 
-        <div id="unity-container">
-            <canvas id="unity-canvas"></canvas>
-            <div id="unity-loading-bar">
-                <div id="optics-logo"></div>
-                <div id="unity-progress-bar-empty">
-                    <div id="unity-progress-bar-full"></div>
-                </div>
-            </div>
-            <div id="unity-warning"></div>
-        </div>
-    </div>
-</main>
-
-<footer>
-    <p>Copyright by Chuyue Zhang, Leo Hanxu, and Yang Chen</p>
-</footer>
+    <footer>
+        <p>Copyright by Chuyue Zhang, Leo Hanxu, and Yang Chen</p>
+    </footer>
 </body>
 </html>

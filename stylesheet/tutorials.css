@@ -1,24 +1,6 @@
 @import "general.css";
 
-/* TODO: Move the common Styles to unity.css */
-
-.grid-container{
-    gap: var(--mb-2);
-    width: 90%;
-    transition: all .5s ease;
-}
-
-.grid-unity-open{
-    display: grid;
-    grid-template-columns: max-content 1fr;
-}
-
-.grid-unity-close{
-    display: grid;
-    grid-template-columns: 100% 0;
-}
-
-/* Static */
+/* Both Close and Open */
 .section{
     padding: var(--mb-1);
     margin: var(--mb-1);
@@ -34,7 +16,13 @@
     transition: all .5s ease;
 }
 
-.section button{
+.section:hover{
+    border-radius: var(--border-radius);
+    box-shadow: 3px 3px 6px var(--text-color);
+    transition: all .5s ease;
+}
+
+.unity-btn{
     background-color: var(--container-color-dark);
     color: var(--text-color-light);
     padding: var(--mb-1);
@@ -42,13 +30,7 @@
     transition: all .2s ease;
 }
 
-.section:hover{
-    border-radius: var(--border-radius);
-    box-shadow: 3px 3px 6px var(--text-color);
-    transition: all .5s ease;
-}
-
-.section button:hover{
+.unity-btn:hover{
     background-color: var(--body-color);
     color: var(--text-color);
     border-radius: var(--border-radius);
@@ -56,16 +38,17 @@
     transition: all .2s ease;
 }
 
-/* Dynamic */
-.grid-unity-open .section{
-    padding: var(--mb-1) var(--mb-0-5);
-    margin: var(--mb-0-5) 0;
-    transition: all .5s ease;
-}
-
+/* Unity Canvas Close */
 .grid-unity-close .unity-list{
     display: flex;
     flex-direction: row;
+    transition: all .5s ease;
+}
+
+/* Unity Canvas Open */
+.grid-unity-open .section{
+    padding: var(--mb-1) var(--mb-0-5);
+    margin: var(--mb-0-5) 0;
     transition: all .5s ease;
 }
 
@@ -84,3 +67,4 @@
     padding: var(--mb-0-5) 0;
     transition: all .2s ease;
 }
+

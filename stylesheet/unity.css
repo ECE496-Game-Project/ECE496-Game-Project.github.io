@@ -1,5 +1,22 @@
 @import "general.css";
 
+/* Grid Format */
+.grid-container{
+    gap: var(--mb-2);
+    width: 90%;
+    transition: all .5s ease;
+}
+
+.grid-unity-open{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
+
+.grid-unity-close{
+    display: grid;
+    grid-template-columns: 100% 0;
+}
+
 /* Unity Format */
 #unity-container {
     width: 100%;
