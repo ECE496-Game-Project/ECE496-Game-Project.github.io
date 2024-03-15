@@ -23,11 +23,18 @@
 }
 
 .unity-btn{
-    background-color: var(--container-color-dark);
     color: var(--text-color-light);
     padding: var(--mb-1);
     border: none;
     transition: all .2s ease;
+}
+
+.unity-btn-close{
+    background-color: var(--container-color-dark);
+}
+
+.unity-btn-open{
+    background-color: var(--minor-color-second);
 }
 
 .unity-btn:hover{
