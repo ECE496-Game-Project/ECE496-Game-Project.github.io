@@ -33,12 +33,68 @@ function dispatch(param, btn) {
         gridContainer[0].className = 'grid-container grid-unity-open';
         loadUnity();
         render();
+        cleanDupScripts(config["frameworkUrl"]);
     }
 
     else{
         gridContainer[0].className = 'grid-container grid-unity-close';
         btn.className = 'unity-btn unity-btn-close';
     }
+}
+
+function loadUnity() {
+    const loadEls = document.querySelectorAll(`script[src="${loaderUrl}"]`);
+
+    if(loadEls.length > 0){
+        loadUnityInstance();
+    }else{
+        const script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = loadUnityInstance;
+        document.body.appendChild(script);
+    }
+}
+
+function loadUnityInstance(){
+    console.log("load script with unity instance");
+    createUnityInstance(canvas, config, () => {}).then((unityInstance) => {
+        if(unityInstance) console.log("Game instance is created");
+        else console.warn("Game Instance is null");
+    })
+}
+
+function render(){
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        const meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        container.className = "unity-mobile";
+        canvas.className = "unity-mobile";
+
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
+    }
+
+    const scriptEls = document.querySelectorAll(`script[src="${loaderUrl}"]`);
+
+    if(scriptEls.length > 0){
+        loadUnityProgressBar();
+    }else{
+        const script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = loadUnityProgressBar;
+        document.body.appendChild(script);
+    }
+}
+
+function loadUnityProgressBar(){
+    createUnityInstance(canvas, config, (progress) => {
+        progressBarFull.style.width = 100 * progress + "%";
+    }).then(() => {
+        loadingBar.style.display = "none";
+    }).catch((message) => {
+        alert(message);
+    });
 }
 
 function unityShowBanner(msg, type) {
@@ -60,66 +116,9 @@ function unityShowBanner(msg, type) {
     updateBannerVisibility();
 }
 
-function render(){
-    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        const meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
+function cleanDupScripts(src){
+    const frameEls = document.querySelectorAll(`script[src="${src}"]`);
+    for (let i = 1; i < frameEls.length; i++) {
+        frameEls[i].parentNode.removeChild(frameEls[i]);
     }
-
-    const scriptEls = document.querySelectorAll(`script[src="${loaderUrl}"]`);
-    console.log("exists at least " + scriptEls.length)
-
-    // TODO: BUG Each scene could only be loaded once
-
-    let script;
-    if(scriptEls.length > 0){
-        script = scriptEls[0];
-    }else{
-        script = document.createElement("script");
-        script.src = loaderUrl;
-    }
-
-    script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-            progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-            loadingBar.style.display = "none";
-        }).catch((message) => {
-            alert(message);
-        });
-    };
-
-    document.body.appendChild(script);
 }
-
-function loadUnity() {
-    let loaderUrl = baseDir + ".loader.js";
-
-    const scriptEls = document.querySelectorAll(`script[src="${loaderUrl}"]`);
-
-    let script;
-    if(scriptEls.length > 0){
-        script = scriptEls[0];
-    }else{
-        script = document.createElement("script");
-        script.src = loaderUrl;
-    }
-
-    script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-
-        }).then((unityInstance) => {
-            if(unityInstance) console.log("Game instance is created");
-            else console.warn("Game Instance is null");
-        })
-    }
-
-    document.body.appendChild(script);
-}
-

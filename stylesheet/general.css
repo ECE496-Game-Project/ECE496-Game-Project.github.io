@@ -177,18 +177,15 @@ input::placeholder {
 textarea:focus,
 input:focus {
     outline: none;
-    background-color: var(--container-color-dark-second);
+    background-color: var(--minor-color-second);
     color: var(--text-color-light);
     border-radius: var(--border-radius);
     transition: 0.5s all ease;
 }
 
-input:focus {
-    border-bottom: var(--border-width-bold) solid var(--minor-color-second);
-}
-
-textarea:focus{
-    border: var(--border-width-bold) solid var(--minor-color-second);
+textarea:focus
+, input:focus {
+    border: var(--border-width-bold) solid var(--container-color-dark);
 }
 
 textarea:focus::placeholder,
