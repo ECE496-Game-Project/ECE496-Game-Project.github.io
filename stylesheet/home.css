@@ -9,12 +9,24 @@ main{
 #logo{
     width: 40%;
     margin: var(--mb-2-5);
+}
+
+#logo img{
     transition: all .5s ease;
 }
 
-#logo:hover{
+#logo:hover img{
     border-radius: var(--border-radius);
     box-shadow: 3px 3px 6px var(--text-color);
     transform: scale(1.05);
     transition: all .5s ease;
+}
+
+section{
+    margin: 200px 0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
