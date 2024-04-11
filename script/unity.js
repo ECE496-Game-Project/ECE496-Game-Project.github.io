@@ -21,7 +21,7 @@ function dispatch(param, btn) {
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Tang-Chan",
         productName: "Optics",
-        productVersion: "0.2.1",
+        productVersion: "0.3.0",
         showBanner: unityShowBanner,
     };
 
@@ -31,9 +31,10 @@ function dispatch(param, btn) {
         });
         btn.className = 'unity-btn unity-btn-open';
         gridContainer[0].className = 'grid-container grid-unity-open';
+        cleanScripts();
         loadUnity();
         render();
-        cleanDupScripts(config["frameworkUrl"]);
+        // cleanDupScripts(config["frameworkUrl"]);
     }
 
     else{
@@ -116,8 +117,17 @@ function unityShowBanner(msg, type) {
     updateBannerVisibility();
 }
 
+function cleanScripts(){
+    const frameEls = document.querySelectorAll(`script`);
+    for (let i = 1; i < frameEls.length; i++) {
+        frameEls[i].parentNode.removeChild(frameEls[i]);
+    }
+}
+
 function cleanDupScripts(src){
+    console.warn("src " + src);
     const frameEls = document.querySelectorAll(`script[src="${src}"]`);
+    console.warn("find dups " + frameEls.length);
     for (let i = 1; i < frameEls.length; i++) {
         frameEls[i].parentNode.removeChild(frameEls[i]);
     }
