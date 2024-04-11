@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <title>OPTICS</title>
 
-    <link rel="icon" type="image/svg+xml" href="/resources/images/logo.svg" />
-    <link rel="stylesheet" type="text/css" href="/stylesheet/general.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheet/home.css">
+    <link rel="icon" type="image/svg+xml" href="./resources/images/logo.svg" />
+    <link rel="stylesheet" type="text/css" href="./stylesheet/general.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheet/home.css">
+    <script src="./script/home.js" defer></script>
 </head>
 <body>
   <header>
       <a class="header-content" href="./index.html">
-          <img src="/resources/images/logo.svg" alt="Logo">
+          <img src="./resources/images/logo.svg" alt="Logo">
       </a>
       <ul class="header-content header-list">
           <li>
@@ -32,7 +33,7 @@
 
   <main>
       <a id="logo" href="#about-us">
-        <img src="/resources/images/logo.svg" alt="logo">
+        <img src="./resources/images/logo.svg" alt="logo">
       </a>
       <h1>OPTICA v0.3.0</h1>
       <p>Team 2023720 - ECE496Y1 Design Project</p>
@@ -43,11 +44,25 @@
           <p>We focus on wave optics, a branch of optics that explores</p>
           <p>the electromagnetic wave propagation of light and related physical phenomena, </p>
           <p>including polarization, interference, etc.</p>
+          <div class="about-gallery">
+              <img class="displayed-img-about" src="./resources/images/about/pic1.jpg" alt="pic1">
+              <h2 class="displayed-title-about">Polarization</h2>
+              <div class="thumb-bar-about">
+                  <!--Append Elements in home.js-->
+              </div>
+          </div>
       </section>
 
       <section id="tutorials">
           <h1>Online Tutorials</h1>
           <p>Follow our interactive online tutorial made with Unity to learn Wave Optics.</p>
+          <div class="tutorial-gallery">
+              <img class="displayed-img-tut" src="./resources/images/tutorial/pic1.gif" alt="pic1">
+              <h2 class="displayed-title-tut">Learn with Dialogue Tutorials</h2>
+              <div class="thumb-bar-tut">
+                  <!--Append Elements in home.js-->
+              </div>
+          </div>
       </section>
 
       <section id="labs">

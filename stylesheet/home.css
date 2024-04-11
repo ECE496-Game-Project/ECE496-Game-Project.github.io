@@ -15,11 +15,79 @@ main{
     transition: all .5s ease;
 }
 
-#logo:hover img{
+.intro-images:hover
+, #logo:hover img{
     border-radius: var(--border-radius);
     box-shadow: 3px 3px 6px var(--text-color);
     transform: scale(1.05);
     transition: all .5s ease;
+}
+
+.intro-images{
+    width: 50%;
+    margin: var(--mb-2-5) 0;
+    transition: all .5s ease;
+}
+
+h2{
+    margin: var(--mb-0-75) 0 0 0;
+    align-self: center;
+}
+
+.displayed-img-about,
+.displayed-img-tut{
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.displayed-img-about:hover,
+.displayed-img-tut:hover{
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    border-radius: var(--border-radius);
+    box-shadow: 3px 3px 6px var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.about-gallery,
+.tutorial-gallery{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    margin: var(--mb-2) auto;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.thumb-bar-about,
+.thumb-bar-tut{
+    position: relative;
+    top: 10px;
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.thumb-bar-about img,
+.thumb-bar-tut img{
+    width: 20%;
+    cursor: pointer;
+    border: 1px solid darkgray;
+    margin: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.thumb-bar-about img:hover,
+.thumb-bar-tut img:hover{
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
 }
 
 section{
