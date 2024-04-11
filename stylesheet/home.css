@@ -15,17 +15,11 @@ main{
     transition: all .5s ease;
 }
 
-.intro-images:hover
-, #logo:hover img{
+
+#logo:hover img{
     border-radius: var(--border-radius);
     box-shadow: 3px 3px 6px var(--text-color);
     transform: scale(1.05);
-    transition: all .5s ease;
-}
-
-.intro-images{
-    width: 50%;
-    margin: var(--mb-2-5) 0;
     transition: all .5s ease;
 }
 
@@ -55,7 +49,7 @@ h2{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 70%;
+    width: 60%;
     margin: var(--mb-2) auto;
     padding: 5px;
     overflow: hidden;
