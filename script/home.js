@@ -12,9 +12,9 @@ const aboutTexts = [
 ];
 
 const tutorialTexts = [
-    "Learn with Dialogue Tutorials",
+    "Follow Dialogue Tutorials",
     "Visualise Complex Concepts",
-    "Responsive Interactions",
+    "Real-time Responsive Interactions",
 ];
 
 for(let i = 1; i <= 3; i++) {
