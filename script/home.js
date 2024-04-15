@@ -11,12 +11,6 @@ const aboutTexts = [
     "Total Internal Refraction"
 ];
 
-const tutorialTexts = [
-    "Follow Dialogue Tutorials",
-    "Visualise Complex Concepts",
-    "Real-time Responsive Interactions",
-];
-
 for(let i = 1; i <= 3; i++) {
     const newImage = document.createElement('img');
     newImage.setAttribute('src', './resources/images/about/pic' + i + '.jpg');
@@ -27,6 +21,12 @@ for(let i = 1; i <= 3; i++) {
         titleAbout.textContent = aboutTexts[i-1];
     }
 }
+
+const tutorialTexts = [
+    "Follow Dialogue Tutorials",
+    "Visualise Complex Concepts",
+    "Real-time Responsive Interactions",
+];
 
 for(let i = 1; i <= 3; i++) {
     const newImage = document.createElement('img');
