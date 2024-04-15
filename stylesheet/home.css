@@ -43,6 +43,12 @@ h2{
     transition: all 0.3s ease;
 }
 
+iframe{
+    margin: var(--mb-2) auto;
+    width: 1120px;
+    height: 630px;
+}
+
 .about-gallery,
 .tutorial-gallery{
     position: relative;
